@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026935B021B9A9F2008182DB /* AbstactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026935AF21B9A9F2008182DB /* AbstactionViewController.swift */; };
 		02A5913E21B70A0B002A85F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A5913D21B70A0B002A85F0 /* AppDelegate.swift */; };
-		02A5914021B70A0B002A85F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A5913F21B70A0B002A85F0 /* ViewController.swift */; };
 		02A5914321B70A0B002A85F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A5914121B70A0B002A85F0 /* Main.storyboard */; };
 		02A5914521B70A19002A85F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A5914421B70A19002A85F0 /* Assets.xcassets */; };
 		02A5914821B70A19002A85F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A5914621B70A19002A85F0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026935AF21B9A9F2008182DB /* AbstactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstactionViewController.swift; sourceTree = "<group>"; };
 		02A5913A21B70A0B002A85F0 /* hmmmmmmm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hmmmmmmm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A5913D21B70A0B002A85F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02A5913F21B70A0B002A85F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02A5914221B70A0B002A85F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02A5914421B70A19002A85F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A5914721B70A19002A85F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		02A5915221B70ACA002A85F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02A5913F21B70A0B002A85F0 /* ViewController.swift */,
+				026935AF21B9A9F2008182DB /* AbstactionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A5914021B70A0B002A85F0 /* ViewController.swift in Sources */,
+				026935B021B9A9F2008182DB /* AbstactionViewController.swift in Sources */,
 				02A5913E21B70A0B002A85F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +306,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = hmmmmmmm/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/hmmmmmmm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ctec.hmmmmmmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,14 +325,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = hmmmmmmm/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/hmmmmmmm/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ctec.hmmmmmmm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
