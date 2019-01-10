@@ -8,34 +8,10 @@
 
 import UIKit
 
-public class AbstactionViewController: UIPageViewController, UIPageViewControllerDataSource {
-
-    override func viewDidLoad() {
+public class AbstractionViewController: UIPageViewController, UIPageViewControllerDataSource {
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    private lazy var orderedAbstractionViews : [UIViewController] =
-    {
-        return
-        [
-            self.newAbstractionViewController(abstractionLevel: "Swift"),
-            self.newAbstractionViewController(abstractionLevel: "Block"),
-            self.newAbstractionViewController(abstractionLevel: "ByteCode"),
-            self.newAbstractionViewController(abstractionLevel: "Binary"),
-            self.newAbstractionViewController(abstractionLevel: "LogicalGate")
-        ]
-    }()
-    
-    private func newAbstactionViewController(abstractionLevel : String) -> UIViewController
-    {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
-    }
-    
-    public override func viewDidLoad()
-    {
-        super.viewDidLaod()
         dataSource = self
         
         if let firstViewController = orderedAbstractionViews.first
@@ -45,15 +21,93 @@ public class AbstactionViewController: UIPageViewController, UIPageViewControlle
                                animated: true,
                                completion: nil)
         }
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private lazy var orderedAbstractionViews : [UIViewController] =
+    {
+        return [
+            self.newAbstractionViewController(abstractionLevel: "Swift"),
+            self.newAbstractionViewController(abstractionLevel: "Block"),
+            self.newAbstractionViewController(abstractionLevel: "ByteCode"),
+            self.newAbstractionViewController(abstractionLevel: "Binary"),
+            self.newAbstractionViewController(abstractionLevel: "LogicalGate")
+        ]
+    }()
+    
+    private func newAbstractionViewController(abstractionLevel : String) -> UIViewController
+    {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
     }
-    */
-
+    //left
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController:
+        UIViewController) -> UIViewController?
+    {
+        guard let  viewControllerIndex = orderedAbstractionViews.index(of: viewController)
+            else
+        {
+            return nil
+        }
+        
+        let previousIndex = viewControllerIndex - 1
+        
+        guard previousIndex >= 0
+            else
+        {
+            return orderedAbstractionViews.last
+        }
+        
+        guard orderedAbstractionViews.count > previousIndex
+            else
+        {
+            return nil
+        }
+        
+        return orderedAbstractionViews[previousIndex]
+    }
+    
+    //right
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController:
+        UIViewController) -> UIViewController?
+    {
+        guard let  viewControllerIndex = orderedAbstractionViews.index(of: viewController)
+            else
+        {
+            return nil
+        }
+        
+        let previousIndex = viewControllerIndex + 1
+        
+        guard previousIndex >= 0
+            else
+        {
+            return orderedAbstractionViews.last
+        }
+        
+        guard orderedAbstractionViews.count > previousIndex
+            else
+        {
+            return nil
+        }
+        
+        return orderedAbstractionViews[previousIndex]
+    }
+    
+    public func presentationCount(for pageViewController:
+        UIPageViewController) -> Int
+    {
+        return orderedAbstractionViews.count
+    }
+    
+    public func presentationIndex(for pageViewController: UIPageViewController) -> Int
+    {
+        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex =
+            orderedAbstractionViews.index(of: firstViewController)
+            else
+        {
+            return 0
+        }
+        
+        return firstViewControllerIndex
+    }
 }
